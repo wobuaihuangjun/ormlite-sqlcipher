@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blank">#000000</color>
+    <color name="red">#fa6666</color>
+    <color name="white">#ffffff</color>
+    <color name="yellow">#ff9933</color>
+    <color name="orange">#ff6000</color>
+    <color name="orange_fdbb2e">#fdbb2e</color>
+    <color name="orange_ffcc92">#ffcc92</color>
+    <color name="little_orange">#f67f09</color>
+    <color name="orange_ff8800">#ff8800</color>
+    <color name="gray">#bbbbbb</color>
+    <color name="blue">#32bf99</color>
+
+    <color name="button_ensure">#ff6000</color>
+
+    <color name="wheel_unselect_text">#c2c1c1</color>
+
+    <color name="item_press_on">#ebebeb</color>
+    <color name="item_press_up">#ffffff</color>
+    <color name="baby_center_tem_press_up">#00ffffff</color>
+
+    <color name="black">#222222</color>
+    <color name="black_525252">#525252</color>
+    <color name="black_222222">#222222</color>
+    <color name="black_333333">#333333</color>
+    <color name="brown_725640">#725640</color>
+    <color name="gray_888888">#888888</color>
+    <color name="gray_7f7f7f">#7f7f7f</color>
+    <color name="gray_f2ebe1">#f2ebe1</color>
+    <color name="gray_e1e1e1">#e1e1e1</color>
+    <color name="gray_dadbdc">#dadbdc</color>
+
+    <color name="gray_555555">#555555</color>
+
+    <color name="grey_b9a580">#b9a580</color>
+
+    <color name="baby_watchset_gray_bg">#cccccc</color>
+
+    <color name="divider_bg_f0f0f0">#f0f0f0</color>
+    <color name="divider_bg_a0a0a0">#a0a0a0</color>
+    <color name="chat_btn">#6dddbd</color>
+
+    <!-- 微聊 -->
+    <color name="chat_record_hint_cancel1">#888888</color>
+    <color name="chat_record_hint_cancel2">#fa6666</color>
+    <color name="chat_record_hint_time">#222222</color>
+    <color name="chat_record_hint_short">#888888</color>
+
+    <color name="chat_zero_volume">#99000000</color>
+    <color name="chat_forbidden_hint">#78000000</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="emoji_keyboard_bg_light">#f6f5f5</color>
+    <color name="chat_refresh_1">#6dddbd</color>
+    <color name="chat_refresh_2">#ff9933</color>
+    <color name="chat_refresh_3">#fa6666</color>
+    <color name="chat_refresh_4">#ffffff</color>
+    <!-- 下拉刷刷新组件 -->
+    <color name="xListView_header_fooler_bg">#f4f6f6</color>
+
+    <!--remindmainpage-->
+    <color name="timed_reminder_clock_green">#7fd8c0</color>
+    <color name="timed_reminder_clock_yellow">#f7c544</color>
+    <color name="timed_reminder_clock_blue">#8bcbea</color>
+    <color name="timed_reminder_clock_purple">#969ff3</color>
+    <color name="timed_reminder_clock_red">#f78080</color>
+    <color name="timed_reminder_clock_purred">#dc83cc</color>
+    <color name="timed_reminder_record_anime">#00ffa2</color>
+    <color name="timed_reminder_wheel_text">#c2c1c1</color>
+    <color name="timed_reminder_wheel_selected_text">#ff6a0e</color>
+    <color name="timed_reminder_closed_gray">#e3e3e3</color>
+    <color name="timed_reminder_closed_word">#999999</color>
+    <color name="timed_reminder_date_color">#ff9933</color>
+    <color name="timed_reminder_light_gray">#7ff2f2f2</color>
+
+    <color name="homepage_school_forbidden_open_hint">#888888</color>
+    <color name="homepage_school_forbidden_close_hint">#555555</color>
+    <color name="homepage_three_textview_text_on">#32d787</color>
+    <color name="homepage_three_textview_text_off">#555555</color>
+    <color name="homepage_three_textview_text_warnning">#ff4155</color>
+
+    <color name="homepage_left_menu_gray">#C0C0C0</color>
+    <color name="homepage_left_menu_black">#343434</color>
+
+    <!-- Integral 积分颜色-->
+    <color name="integral_background_gray">#ebedf0</color>
+
+
+
+</resources>
