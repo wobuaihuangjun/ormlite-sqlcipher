@@ -1,14 +1,14 @@
 package com.example.huangzj.myapplication.way2;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.example.huangzj.myapplication.LogUtil;
+import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.sqlcipher.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-import net.sqlcipher.database.SQLiteDatabase;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private Map<String, Dao> daoMap;
 
     private DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, PASSWORD, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
         daoMap = new HashMap<>();
     }
 
@@ -48,7 +48,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         if (instance == null) {
             synchronized (DatabaseHelper.class) {
                 if (instance == null) {
-                    SQLiteDatabase.loadLibs(context);
                     instance = new DatabaseHelper(context);
                 }
             }

@@ -7,6 +7,8 @@ import com.example.huangzj.myapplication.way1.DBManager;
 import com.example.huangzj.myapplication.way2.City;
 import com.example.huangzj.myapplication.way2.CityDao;
 
+import net.sqlcipher.database.SQLiteDatabase;
+
 import java.util.List;
 
 /**
@@ -19,8 +21,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        DBManager.init(this, "DB-way1", "DB-way1-password");
-
+//        DBManager.init(this, "DB-way1", "DB-way1-password");
+        SQLiteDatabase.loadLibs(this);
         testCity();
     }
 

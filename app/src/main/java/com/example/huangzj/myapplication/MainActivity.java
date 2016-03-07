@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         way1 = (TextView) findViewById(R.id.way1);
         way2 = (TextView) findViewById(R.id.way2);
 
-        testWay1();
+//        testWay1();
         testWay2();
     }
 
