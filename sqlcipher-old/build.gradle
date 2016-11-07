@@ -19,16 +19,26 @@ android {
         }
     }
 
-}
+    compileOptions {
+        sourceCompatibility sourceCompatVer
+        targetCompatibility targetCompatVer
+    }
 
-repositories {
-    flatDir {
-        dirs 'libs' //this way we can find the .aar file in libs folder
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
 }
 
+//repositories {
+//    flatDir {
+//        dirs 'libs' //this way we can find the .aar file in libs folder
+//    }
+//}
+
 dependencies {
-    compile(group: 'net.zetetic', name: 'android-database-sqlcipher', version: '3.3.1-1', ext: 'aar')
-    compile(group: 'net.zetetic', name: 'android-database-sqlcipher', version: '3.3.1-2', ext: 'asc')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
 }

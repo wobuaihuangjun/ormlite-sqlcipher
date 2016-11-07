@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+apply from: '../config.gradle'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion compileSdkVer
+    buildToolsVersion buildToolsVer
 
     defaultConfig {
         applicationId "com.example.huangzj.dbencrypt"
-        minSdkVersion 9
-        targetSdkVersion 22
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
         versionCode 1
         versionName "1.0"
     }
@@ -35,10 +36,6 @@ repositories {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.+'
-
-//    compile files('libs/sqlcipher.jar')
-//    compile 'com.j256.ormlite:ormlite-core:4.48'
-//    compile 'com.j256.ormlite:ormlite-android:4.48'
 
     compile project(':sqlcipher')
 }

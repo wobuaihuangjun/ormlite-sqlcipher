@@ -1,0 +1,36 @@
+apply plugin: 'maven'
+
+Properties user_properties = new Properties()
+user_properties.load(project.rootProject.file('maven_user.properties').newDataInputStream())
+def repoUrl = user_properties.getProperty("repository.url")
+def userName = user_properties.getProperty("repository.user")
+def userPassword = user_properties.getProperty("repository.password")
+
+Properties pom_properties = new Properties()
+pom_properties.load(project.file('maven_pom.properties').newDataInputStream())
+def pom_name = pom_properties.getProperty("POM_NAME")
+def pom_description = pom_properties.getProperty("POM_DESCRIPTION")
+def pom_group = pom_properties.getProperty("POM_GROUP")
+def pom_artifact_id = pom_properties.getProperty("POM_ARTIFACT_ID")
+def pom_packaging = pom_properties.getProperty("POM_PACKAGING")
+def pom_version = pom_properties.getProperty("POM_VERSION")
+
+
+uploadArchives {
+
+    repositories.mavenDeployer {
+        repository(url: repoUrl) {
+            authentication(userName: userName,
+                    password: userPassword)
+        }
+
+        pom.project {
+            name pom_name
+            description pom_description
+            groupId pom_group
+            artifactId pom_artifact_id
+            version pom_version
+            packaging pom_packaging
+        }
+    }
+}
