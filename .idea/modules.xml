@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
       <module fileurl="file://$PROJECT_DIR$/ormlite-sqlcipher.iml" filepath="$PROJECT_DIR$/ormlite-sqlcipher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlcipher/sqlcipher.iml" filepath="$PROJECT_DIR$/sqlcipher/sqlcipher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlcipher-old/sqlcipher-old.iml" filepath="$PROJECT_DIR$/sqlcipher-old/sqlcipher-old.iml" />
     </modules>
   </component>
 </project>
