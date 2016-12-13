@@ -15,6 +15,12 @@ android {
 
     buildTypes {
         release {
+
+            // 只编译armeabi类型的so文件
+            ndk {
+                abiFilters = ["armeabi"]
+            }
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
