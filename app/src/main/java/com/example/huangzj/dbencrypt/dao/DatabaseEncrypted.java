@@ -24,7 +24,7 @@ public class DatabaseEncrypted {
      * @param encryptedDbName   加密数据库名
      * @param password          加密数据库密码
      */
-    public static boolean importUnencryptedDatabaseTest(Application application, String unencryptedDbName, String encryptedDbName, String password) {
+    public static boolean importUnencryptedDatabase(Application application, String unencryptedDbName, String encryptedDbName, String password) {
         File unencryptedFile = application.getDatabasePath(unencryptedDbName);
         if (!unencryptedFile.exists()) {
             Log.i(TAG, "unencrypted database not exist");
@@ -44,9 +44,9 @@ public class DatabaseEncrypted {
 
             Log.i(TAG, "未加密的数据库数据");
             Cursor cursor = database.rawQuery("select * from city", new String[]{});
-            cursor.moveToFirst();
-            String a = cursor.getString(cursor.getColumnIndex("cityName"));
-            Log.d(TAG, a);
+            while (cursor.moveToNext()) {
+                Log.i(TAG, "cityName：" + cursor.getString(cursor.getColumnIndex("cityName")));
+            }
             cursor.close();
 
             database.rawExecSQL(String.format("ATTACH DATABASE '%s' AS encrypted KEY '%s'",
@@ -57,10 +57,9 @@ public class DatabaseEncrypted {
             // 测试数据是否拷贝成功
             database = SQLiteDatabase.openOrCreateDatabase(encryptedFile, password, null);
             Log.i(TAG, "加密的数据库数据");
-            cursor = database.rawQuery("select * from city", new String[]{});
-            cursor.moveToFirst();
-            a = cursor.getString(cursor.getColumnIndex("cityName"));
-            Log.d(TAG, a);
+            while (cursor.moveToNext()) {
+                Log.i(TAG, "cityName：" + cursor.getString(cursor.getColumnIndex("cityName")));
+            }
             cursor.close();
 
             return true;

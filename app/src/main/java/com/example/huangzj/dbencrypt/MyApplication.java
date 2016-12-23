@@ -35,7 +35,7 @@ public class MyApplication extends Application {
     private void initDb() {
         SQLiteDatabase.loadLibs(this);
 
-//        DatabaseEncrypted.importUnencryptedDatabaseTest(
+//        DatabaseEncrypted.importUnencryptedDatabase(
 //                this,
 //                DatabaseHelper.DATABASE_NAME,
 //                DatabaseHelper.ENCRYPTED_DATABASE_NAME,
