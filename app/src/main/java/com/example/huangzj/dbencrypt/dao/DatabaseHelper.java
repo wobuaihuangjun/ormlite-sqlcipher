@@ -27,8 +27,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     /**
      * 数据库名称
      */
-    private static final String DATABASE_NAME = "unencrypted";
-    private static final String ENCRYPTED_DATABASE_NAME = "encrypted";
+    public static final String DATABASE_NAME = "unencrypted";
+    public static final String ENCRYPTED_DATABASE_NAME = "encrypted";
 
     public static final String PASSWORD = "DB-way2-password";
 
@@ -45,7 +45,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private Map<String, Dao> daoMap;
 
     private DatabaseHelper(Context context) {
-        super(context, ENCRYPTED_DATABASE_NAME, PASSWORD, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
         daoMap = new HashMap<>();
     }
 
@@ -95,7 +95,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
     public synchronized Dao getDao(Class cls) {
-        Dao dao = null;
+        Dao dao;
         String clsName = cls.getSimpleName();
         if (daoMap.containsKey(clsName)) {
             dao = daoMap.get(clsName);

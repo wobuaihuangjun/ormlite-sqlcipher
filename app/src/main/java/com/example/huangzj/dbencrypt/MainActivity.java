@@ -1,12 +1,16 @@
 package com.example.huangzj.dbencrypt;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.huangzj.dbencrypt.dao.DatabaseHelper;
 import com.example.huangzj.dbencrypt.dao.bean.City;
 import com.example.huangzj.dbencrypt.dao.bean.CityDao;
+
+import net.sqlcipher.database.SQLiteDatabase;
 
 import java.io.File;
 import java.util.List;
@@ -33,15 +37,25 @@ public class MainActivity extends Activity {
     }
 
     private void dbIsUpdate() {
-        File unencryptedDatabase = MyApplication.getContext().getDatabasePath("unencrypted");
+        File unencryptedDatabase = MyApplication.getContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
         if (unencryptedDatabase.exists()) {
-            Log.e(TAG, "unencrypted Database is exist");
+            Log.e(TAG, "unencrypted database is exist");
         }
 
-        File encryptedDatabase = MyApplication.getContext().getDatabasePath("encrypted");
+        File encryptedDatabase = MyApplication.getContext().getDatabasePath(DatabaseHelper.ENCRYPTED_DATABASE_NAME);
         if (encryptedDatabase.exists()) {
-            Log.e(TAG, "encrypted Database is exist");
+            Log.e(TAG, "encrypted database is exist");
         }
+
+//        Log.i(TAG, "数据库名：" + DatabaseHelper.DATABASE_NAME);
+//        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(
+//                DatabaseHelper.DATABASE_NAME, "", null);
+//        Log.i(TAG, "加密的数据库数据");
+//        Cursor cursor = database.rawQuery("select * from city", new String[]{});
+//        cursor.moveToFirst();
+//        String a = cursor.getString(cursor.getColumnIndex("cityName"));
+//        Log.d(TAG, a);
+//        cursor.close();
     }
 
     private void testWay2() {
@@ -57,8 +71,8 @@ public class MainActivity extends Activity {
 
         City city = new City();
         city.setCityNo(cityNo);
-        city.setProvinceNo("2");
-        city.setCityName("东莞");
+        city.setProvinceNo("5");
+        city.setCityName("深圳");
 
         if (cityDao.insert(city)) {
             way2.append("\n");

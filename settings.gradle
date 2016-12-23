@@ -1,1 +1,3 @@
-include ':app', ':sqlcipher', ':sqlcipher-old'
+include ':app'
+include ':sqlcipher'
+//include ':sqlcipher-old'

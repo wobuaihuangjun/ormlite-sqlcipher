@@ -3,7 +3,8 @@ package com.example.huangzj.dbencrypt;
 import android.app.Application;
 import android.util.Log;
 
-import com.example.huangzj.dbencrypt.dao.ImportUnencryptedDatabase;
+import com.example.huangzj.dbencrypt.dao.DatabaseEncrypted;
+import com.example.huangzj.dbencrypt.dao.DatabaseHelper;
 import com.example.huangzj.dbencrypt.dao.bean.City;
 import com.example.huangzj.dbencrypt.dao.bean.CityDao;
 
@@ -28,13 +29,22 @@ public class MyApplication extends Application {
 
         initDb();
 
-        testCity();
+//        testCity();
     }
 
     private void initDb() {
         SQLiteDatabase.loadLibs(this);
-        new ImportUnencryptedDatabase().execute();
 
+//        DatabaseEncrypted.importUnencryptedDatabaseTest(
+//                this,
+//                DatabaseHelper.DATABASE_NAME,
+//                DatabaseHelper.ENCRYPTED_DATABASE_NAME,
+//                DatabaseHelper.PASSWORD);
+
+        DatabaseEncrypted.exportToUnencryptedDatabase(this,
+                DatabaseHelper.ENCRYPTED_DATABASE_NAME,
+                DatabaseHelper.DATABASE_NAME,
+                DatabaseHelper.PASSWORD);
     }
 
     private void testCity() {
